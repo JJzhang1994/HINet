@@ -25,7 +25,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: ./experiments/pretrained_models/HINet-GoPro.pth
+  pretrain_network_g: /content/drive/MyDrive/HINet-SIDD-1x.pth
   strict_load_g: true
   resume_state: ~
 
