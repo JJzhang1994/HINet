@@ -44,10 +44,10 @@ python setup.py develop --no_cuda_ext
 ---
 
 * ```python basicsr/demo.py -opt options/demo/demo.yml```
-  * modified your [input and output path](https://github.com/megvii-model/HINet/blob/main/options/demo/demo.yml#L16-L17)
-  * [define network](https://github.com/megvii-model/HINet/blob/main/options/demo/demo.yml#L20-L24)
-  * [pretrained model](https://github.com/megvii-model/HINet/blob/main/options/demo/demo.yml#L28), it should match the define network.
-     * for pretrained model, see [here](https://github.com/megvii-model/HINet/blob/main/experiments/pretrained_models/README.md)
+  * modified your [input and output path](https://github.com/JJzhang1994/HINet/blob/main/options/demo/demo.yml#L16-L17)
+  * [define network](https://github.com/JJzhang1994/HINet/blob/main/options/demo/demo.yml#L20-L24)
+  * [pretrained model](https://github.com/JJzhang1994/HINet/blob/main/options/demo/demo.yml#L28), it should match the define network.
+     * for pretrained model, see [here](https://github.com/JJzhang1994/HINet/blob/main/experiments/pretrained_models/README.md)
 
 ### Image Restoration Tasks
 ---
