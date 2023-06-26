@@ -20,7 +20,7 @@ img_path:
 network_g:
   type: HINet
   wf: 64
-  hin_position_left: 3
+  hin_position_left: 0
   hin_position_right: 4
 
 # path
