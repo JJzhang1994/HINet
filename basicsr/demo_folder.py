@@ -35,6 +35,8 @@ def main():
 
     files = natsorted(glob(os.path.join(img_folder, '*.tiff')))
 
+    print(files)
+
     for _file in files:
         
         file_client = FileClient('disk')
