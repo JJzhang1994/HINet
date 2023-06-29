@@ -40,12 +40,16 @@ def main():
         file_client = FileClient('disk')
 
         img_bytes = file_client.get(_file, None)
+
+        print(_file)
         try:
             img = imfrombytes(img_bytes, float32=True)
         except:
             raise Exception("path {} not working".format(_file))
 
         img = img2tensor(img, bgr2rgb=True, float32=True)
+
+        print('transfer success')
         
         model = create_model(opt)
 
