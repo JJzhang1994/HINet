@@ -27,7 +27,7 @@ def main():
 
     img_folder = '/content/dirve/MyDrive/test_noisy_folder/'
 
-    out_folder = '/content/drive/MyDrive/HINetResult/'
+    out_folder = '/content/drive/MyDrive/HINetResult/denoise/'
 
     files = natsorted(glob(os.path.join(img_folder, '*.tiff')))
 
@@ -45,6 +45,9 @@ def main():
         
         model = create_model(opt)
 
+        output_path = os.path.join(out_folder,
+                                         'result-' + 
+                                         os.path.split(_file)[-1])
         
         model.single_image_inference(img, output_path)
 
