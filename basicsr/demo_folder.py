@@ -15,11 +15,44 @@ from basicsr.utils import FileClient, imfrombytes, img2tensor, padding
 #                            make_exp_dirs)
 # from basicsr.utils.options import dict2str
 
+from glob import glob
+
+from natsort import natsorted
+
 def main():
     # parse options, set distributed setting, set ramdom seed
     opt = parse_options(is_train=False)
 
     img_path = opt['img_path'].get('input_img')
+
+    img_folder = '/content/dirve/MyDrive/test_noisy_folder/'
+
+    out_folder = '/content/drive/MyDrive/HINetResult/'
+
+    files = natsorted(glob(os.path.join(img_folder, '*.tiff')))
+
+    for _file in files:
+        
+        file_client = FileClient('disk')
+
+        img_bytes = file_client.get(img_path, None)
+        try:
+            img = imfrombytes(img_bytes, float32=True)
+        except:
+            raise Exception("path {} not working".format(img_path))
+
+        img = img2tensor(img, bgr2rgb=True, float32=True)
+        
+        model = create_model(opt)
+
+        
+        model.single_image_inference(img, output_path)
+
+    
+          
+        
+
+    '''
     output_path = opt['img_path'].get('output_img')
 
 
@@ -41,6 +74,7 @@ def main():
     model.single_image_inference(img, output_path)
 
     print('inference {} .. finished.'.format(img_path))
+    '''
 
 if __name__ == '__main__':
     main()
