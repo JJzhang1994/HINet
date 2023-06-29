@@ -27,7 +27,7 @@ def main():
 
     #img_path = opt['img_path'].get('input_img')
 
-    img_folder = '/content/dirve/MyDrive/test_noisy_folder/'
+    img_folder = '/content/drive/MyDrive/test_noisy_folder/'
 
     out_folder = '/content/drive/MyDrive/HINetResult/denoise/'
 
