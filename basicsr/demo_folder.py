@@ -19,6 +19,8 @@ from glob import glob
 
 from natsort import natsorted
 
+import os
+
 def main():
     # parse options, set distributed setting, set ramdom seed
     opt = parse_options(is_train=False)
