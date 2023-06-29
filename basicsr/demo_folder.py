@@ -29,6 +29,8 @@ def main():
 
     out_folder = '/content/drive/MyDrive/HINetResult/denoise/'
 
+    os.makedirs(out_folder, exist_ok=True)
+
     files = natsorted(glob(os.path.join(img_folder, '*.tiff')))
 
     for _file in files:
