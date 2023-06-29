@@ -25,7 +25,7 @@ def main():
     # parse options, set distributed setting, set ramdom seed
     opt = parse_options(is_train=False)
 
-    img_path = opt['img_path'].get('input_img')
+    #img_path = opt['img_path'].get('input_img')
 
     img_folder = '/content/dirve/MyDrive/test_noisy_folder/'
 
@@ -39,11 +39,11 @@ def main():
         
         file_client = FileClient('disk')
 
-        img_bytes = file_client.get(img_path, None)
+        img_bytes = file_client.get(_file, None)
         try:
             img = imfrombytes(img_bytes, float32=True)
         except:
-            raise Exception("path {} not working".format(img_path))
+            raise Exception("path {} not working".format(_file))
 
         img = img2tensor(img, bgr2rgb=True, float32=True)
         
